@@ -39,5 +39,6 @@ Thumbs.db
 ######################
 *.sublime-project
 *.sublime-workspace
+/oldhtml
 /node_modules
 /public
