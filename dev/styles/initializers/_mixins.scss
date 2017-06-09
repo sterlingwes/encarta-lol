@@ -10,6 +10,11 @@
   *zoom: 1;
 }
 
+@mixin bgfull() {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 /*============================================================================
   Prefix mixin for generating vendor prefixes.
   Based on https://github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_prefixer.scss
@@ -50,7 +55,7 @@
 $breakpoints: (
   palm '(max-width: 600px)'
   portable '(max-width: 1024px)'
-  lap '(min-width: 601px) and (max-width: 1366px)'
+  lap '(min-width: 601px) and (max-width: 1024px)'
   desk '(min-width: 1025px)'
   monitor '(min-width: 1920px)'
 );
@@ -104,4 +109,32 @@ $breakpoints: (
   width: auto;
   height: auto;
   margin: 0;
+}
+
+@mixin line {
+  content: '';
+  background-color: $yellow;
+  border: 0;
+  height: 2px;
+  width: 100px;
+  position: absolute;
+  top: $gutter*3.5;
+  left: 0;
+}
+
+@mixin fullBg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+@mixin fullBleed {
+  @include media (palm) {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
 }

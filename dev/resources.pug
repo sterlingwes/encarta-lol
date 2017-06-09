@@ -1,0 +1,24 @@
+doctype html
+html(lang='en')
+  include head.pug
+  body
+    include header.pug
+    section.space
+      .page-hero.bg-purpleGreen.space
+        .hero-text-bg
+          h2 Resources
+          hr.center
+          p
+            em Slides, guides, and all the goodies.
+      .container.grid.grid--top
+        .grid-1of1.u-center
+          h3 Firsts of a Front-End Dev
+          hr.small.u-m--auto
+          p
+            | Lunch & Learn presented at 
+            a(href='http://hackeryou.com', target='_blank') HackerYou
+            |  on June 8, 2017.
+          a.btn(href='http://justine.codes/firsts-of-a-front-end-developer_justine-chiu.pdf') Download PDF Slides
+
+    include contact.pug
+    include scripts.pug

@@ -1,9 +1,9 @@
 ///////////////////////
 //// BASE SETTINGS ////
 ///////////////////////
-$base-font-size: 17px;
+$base-font-size: 18px;
 $gutter: 20px;
-$container-width: 1100px;
+$container-width: 1280px;
 
 /////////////////////
 //// BREAKPOINTS ////
@@ -11,7 +11,7 @@ $container-width: 1100px;
 $breakpoints: (
   palm '(max-width: 600px)'
   portable '(max-width: 1024px)'
-  lap '(min-width: 601px) and (max-width: 1366px)'
+  lap '(min-width: 601px) and (max-width: 1024px)'
   desk '(min-width: 1025px)'
   monitor '(min-width: 1920px)'
 );
@@ -24,7 +24,10 @@ $mobile-nav-breakpoint: 800px;
 $blue: #0051A5;
 $blue-light: #6AADE4;
 $blue-dark: #003168;
-$yellow: #FEDF01;
+$yellow: #E0AC58;
+$purple: #3B1261;
+$purple-light: #624180;
+
 
 $primary: $blue; 
 $secondary: $blue-light;
@@ -37,6 +40,7 @@ $grey: #C4C4C4;
 $grey-light: #F9F9F9;
 $grey-border: #979797;
 $grey-form-text: $grey-border;
+$rose: #BE877D;
 
 $color-error: #B91A0E;
 $color-error-bg: #B4D455;
@@ -53,12 +57,14 @@ $hover-link-color: $blue-dark;
 ///////////////////////////////
 //// TYPOGRAPHY SETTINGS ////
 ///////////////////////////////
-$sans-serif: 'Helvetica Neue', 'Arial', sans-serif;
-$serif: 'Georgia', 'Garamond', serif;
-$bold: 700;
-$medium: 500;
+$sans-serif: 'Montserrat', sans-serif;
+$serif: 'Crimson Text', 'Garamond', serif;
+
 $normal: 400;
-$light: 300;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+
 $base-line-height: 1;
 $paragraph-line-height: 1.6;
 $base-font-color: $grey-dark;

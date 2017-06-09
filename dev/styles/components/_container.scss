@@ -1,5 +1,3 @@
-$container-width: 1000px; // arbituary number, change this later
-
 .container {
   max-width: $container-width;
   margin: 0 auto;
@@ -12,7 +10,10 @@ $container-width: 1000px; // arbituary number, change this later
   }
 }
 .container--narrow {
+  max-width: 900px;
+  margin: 0 auto;
   padding: 0 80px;
+
   @media (max-width: $mobile-nav-breakpoint) {
     padding: 0 40px;
   }

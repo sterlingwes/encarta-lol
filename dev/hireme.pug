@@ -1,0 +1,29 @@
+doctype html
+html(lang='en')
+  include head.pug
+  body
+    include header.pug
+    section.space
+      .page-hero.bg-blue.space
+        .hero-text-bg
+          h2 Hire Me
+          hr.center
+          p
+            em I have stories to tell and lessons to teach.
+      .container--narrow.grid.grid--top
+        .grid-1of2.grid-1of1--palm
+          h3 Speaking engagements
+          hr.small
+          p Some topics I've given talks on include:
+          ul
+            li Transitioning to a Developer career
+            li Leveling up as a Junior Developer
+            li Job search strategies for Junior Developers
+        .grid-1of2.grid-1of1--palm
+          h3 Teaching code
+          hr.small
+          p
+            strong Group classes for beginner HTML and CSS.
+          p
+            | Class sizes up to 30 people, I teach absolute beginners the fundamentals of web development.
+    include contact.pug

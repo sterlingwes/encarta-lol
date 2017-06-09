@@ -1,0 +1,91 @@
+doctype html
+html(lang='en')
+  include head.pug
+  body
+    section.hero
+      .container
+        .hero-text.animated.fadeInRightBig
+          h2 Justine Chiu
+          h3 Front-End Developer, speaker, educator
+    header#main-nav
+      .container.combo
+        .logo.combo-first
+          a(href='/') JC
+        nav.combo-last
+          ul
+            li
+              a#nav-about(href='#about') About
+            li
+              a#nav-portfolio(href='#portfolio') Portfolio
+            li
+              a#nav-hireme(href='#hireme') Hire Me
+            li
+              a#nav-contact(href='#contact') Contact
+    section#about.about.space
+      .container.grid.grid--middle
+        .grid-2of3.grid-1of1--lap.grid-1of1--palm
+          img.u-image--full(src='assets/justine-chiu-at-my-desk.jpeg', alt='')
+        .grid-1of3.grid-1of1--palm.grid-1of1--lap.about-headline
+          h2 About Justine
+          hr
+          .combo.combo--middle
+            .combo-first
+              span.emoji 👩🏻‍💻
+            .combo-last
+              p
+                | Canadian woman of colour who wrangles up HTML, CSS, and JavaScript to bring life to creative visions.
+          .combo.combo--middle
+            .combo-first
+              span.emoji 📈
+            .combo-last
+              p
+                | Approaches code with "make it work, then make right, then make it fast". Have it all–in phases.
+          .combo.combo--middle
+            .combo-first
+              span.emoji 👯
+            .combo-last
+              p
+                | Values collaboration, which means openness to talk through anything–code, schedules, design–to make a masterpiece.
+          p.btn-wrapper
+            a.btn(href='about.html') Learn more
+    section#portfolio.projects.space
+      .container.grid.grid--top
+        .grid-1of2.grid-1of1--palm.u-center
+          h2 Things I've Made
+          hr.center
+          p Some silly side projects to exercise my JavaScript skills.
+          p.btn-wrapper
+            a.btn(href='portfolio-dev.html') Explore
+        .grid-1of2.grid-1of1--palm.u-center
+          h2 Insights I've Shared
+          hr.center
+          p I compliment my day job with preparing talks, blog posts, and webinars.
+          p.btn-wrapper
+            a.btn(href='portfolio-insights.html') Explore
+    section#hireme.hireMe.space
+      .container.grid.grid--middle
+        .grid-1of3.grid-1of1--palm.grid-1of1--lap
+          h2 Hire Me For...
+          hr
+          .combo.combo--middle
+            .combo-first
+              span.emoji 🎤
+            .combo-last
+              p Giving talks on career transitioning to web development and career planning.
+          .combo.combo--middle
+            .combo-first
+              span.emoji 👩🏻‍🏫
+            .combo-last
+              p Teaching groups beginner HTML and CSS.
+          .combo.combo--middle
+            .combo-first
+              span.emoji 🚫
+            .combo-last
+              p
+                | Not available for contract web development as I work full-time, and wish to use my evenings and weekends to drink beer.
+          p.btn-wrapper
+            a.btn(href='hireme.html') Learn more
+        .grid-2of3.grid-1of1--palm.grid-1of1--lap
+          img.u-image--full(src='assets/justine-chiu-looking-super-fresh.jpg', alt='')
+    include contact.pug
+    include scripts.pug

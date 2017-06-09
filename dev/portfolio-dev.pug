@@ -1,0 +1,58 @@
+doctype html
+html(lang='en')
+  include head.pug
+  body
+    include header.pug
+    section.space
+      .page-hero.bg-orange.space
+        .hero-text-bg
+          h2 Things I've Made
+          hr.center
+          p
+            em Coding is like cooking: half boilerplate, half experiments.
+      .container.grid.grid--top
+        .grid-1of3.grid-1of1--palm
+          h3 Which Beer Glass
+          hr.small
+          p
+            | WBG solves a problem that only snobby beer drinks would have (if they would ever entertain a webapp such as this anyway).
+          p
+            | Because the data from breweryDB is open source, not all folks include recommended glassware with each beer or beer style. Therefore, WBG only captures beer styles with paired glassware.
+          p
+            strong Key learnings:
+          ul
+            li Display pre-load while requests are made
+            li Replace content on change
+            li Removing duplicates and finding unique values
+          p.btn-wrapper
+            a.btn(href='http://whichbeer.glass', target='_blank') Give it a spin!
+        .grid-1of3.grid-1of1--palm
+          h3 Moody Calculator
+          hr.small
+          p
+            | MC solves the problem of knowing when the next wrath of PMS will strike. The lady inputs the key data (dates of last period and cycle length) and the webapp spits out the momentous date.
+          p
+            | The options provided thereafter lead the user to warn their partners or take care of themselves should they have no one to warn (or needn't to warn because they have partners with high emotional quotients).
+          p
+            strong Key learnings:
+          ul
+            li Reusable functions
+            li Using MomentJS to calculate dates
+          p.btn-wrapper
+            a.btn(href='http://justine.codes/moody', target='_blank') Give it a spin!
+        .grid-1of3.grid-1of1--palm
+          h3 Decider
+          hr.small
+          p
+            | This was my very first webapp made with JavaScript and jQuery. Don't laugh at how terrible the code is–I was still learning. But I still am proud enough to showcase this because I got a pretty badass domain name to boot.
+          p
+            | Using the LCBO API, key data points are accessed to produce a list of recommended ciders based on user's choice, linked to the LCBO website.
+          p
+            strong Key learnings:
+          ul
+            li Making AJAX calls
+            li Displaying new elements on submission
+          p.btn-wrapper
+            a.btn(href='http://decider.ca', target='_blank') Give it a spin!
+    include contact.pug
+    include scripts.pug

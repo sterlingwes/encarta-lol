@@ -1,22 +1,12 @@
 @import 'initializers/normalize';
 @import 'initializers/setup';
+@import 'initializers/reset';
 @import 'initializers/variables';
-@import 'initializers/mixins';
 @import 'initializers/grid';
+@import 'initializers/mixins';
 @import 'initializers/typography';
 @import 'initializers/combo';
 @import 'components/layout';
 @import 'components/container';
 @import 'components/forms';
-
-// import all our base global styles
-// @import "initializers/initializersImport";
-
-// import our site specific/object styles
-// @import "components/*";
-
-//import any page specific styles
-// @import "pages/**/*";
-
-// import these last to ensure they are honoured.
-// @import "initializers/utilityClasses";
+@import 'components/buttons';

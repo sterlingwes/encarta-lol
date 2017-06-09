@@ -3,6 +3,7 @@ const sass = require('gulp-sass');
 const concat = require('gulp-concat');
 const babel = require('gulp-babel');
 const autoprefixer = require('gulp-autoprefixer');
+const pug = require('gulp-pug');
 const browserSync = require('browser-sync').create();
 const reload = browserSync.reload;
 
@@ -22,7 +23,7 @@ gulp.task('styles', () => {
 });
 
 gulp.task('scripts', () => {
-  gulp.src('./dev/scripts/main.js')
+  return gulp.src('./dev/scripts/main.js')
     .pipe(babel({
       presets: ['es2015']
     }))
@@ -30,8 +31,22 @@ gulp.task('scripts', () => {
     .pipe(reload({stream: true}));
 });
 
+gulp.task('views', function buildHTML() {
+  return gulp.src('./dev/*.pug')
+  .pipe(pug({
+    // Your options in here. 
+  }))
+  .pipe(gulp.dest('./public'))
+});
+
+gulp.task('assets', () => {
+  return gulp.src('./dev/assets/*')
+    .pipe(gulp.dest('./public/assets'))
+    .pipe(reload({stream: true}));
+});
+
 gulp.task('site', () => {
-  gulp.src('./dev/index.html')
+  return gulp.src('./dev/*.html')
     .pipe(gulp.dest('./public'))
     .pipe(reload({stream: true}));
 });
@@ -39,8 +54,9 @@ gulp.task('site', () => {
 gulp.task('watch', () => {
   gulp.watch('./dev/styles/**/*.scss', ['styles']);
   gulp.watch('./dev/scripts/main.js', ['scripts']);
-  gulp.watch('./dev/index.html', ['site']);
+  gulp.watch('./dev/*.pug', ['views']);
+  gulp.watch('./dev/*.html', ['site']);
   gulp.watch('./**/*.html', reload);
 });
 
-gulp.task('default', ['styles', 'scripts', 'browser-sync', 'site', 'watch']);
+gulp.task('default', ['styles', 'scripts', 'browser-sync', 'site', 'views', 'assets', 'watch']);

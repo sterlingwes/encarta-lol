@@ -1,7 +1,215 @@
 header {
-  // layout styles here
-  background-color: plum;
-  // height: 100vh;
-  padding: 60px 0 30px;
+  height: 100px;
+  background-color: white;
+
+  nav {
+    vertical-align: middle !important;
+    text-align: right;
+  }
+}
+
+nav ul li {
+  display: inline-block;
+  @include media(palm) {
+    display: block;
+  }
+
+  a {
+    padding: $gutter;
+
+    @include media(palm) {
+      padding: 0;
+    }
+  }
+}
+
+.contact {
+  margin: 0 auto;
   text-align: center;
+
+  nav ul {
+    padding: 0;
+    margin: 0 auto;
+  }
+}
+
+.hero {
+  background-image: url('/assets/justine-chiu-b.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top right;
+
+  @media (max-width: 550px) {
+    background-image: none;
+    background-color: #3B1261;
+  }
+
+  .container {
+    height: 100vh;
+    position: relative;
+
+    @media (max-width: $container-width) {
+      margin: 0 $gutter*2;
+    }
+  }
+
+  .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(0, -50%);
+
+    @media (max-width: $container-width) and (min-height: 600px) {
+      left: auto;
+      right: 0%;
+      text-align: right;
+      color: white;
+    }
+
+    @media (max-width: 550px) {
+      top: 20%;
+      color: black;
+    }
+
+    @include media(palm) {
+      h2 {
+        text-align: center;
+        line-height: 1.1;
+      }
+    }
+  }
+}
+
+.grid-1of3 {
+  @include media(palm) {
+    h2, hr {
+      text-align: center;
+      margin: $gutter auto;
+    }
+  }
+}
+
+.portfolio-piece {
+  background-size: cover; 
+  background-position: center center;
+
+  &:after {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+}
+
+.portfolio-desc {
+  padding-right: $gutter;
+
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+.bgfull {
+  background-color: plum;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 300px;  
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.bg-purple {
+  background-image: url('../assets/purple.png');
+}
+
+.bg-blue {
+  background-image: url('../assets/blue.png');
+}
+
+.bg-orange {
+  background-image: url('../assets/orange.png');
+}
+
+.bg-purpleGreen {
+  background-image: url('../assets/purplegreen.png');
+}
+
+.hero-text-bg {
+  background-color: white;
+  position: static;
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+  padding: 30px 60px;
+
+  @include media(palm) {
+    max-width: none;
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+.page-hero {
+  @extend .bgfull;
+  height: 300px;
+  display: flex;
+
+  @include media(palm) {
+    h2 {
+      font-size: 2rem;
+    }
+  }
+}
+
+// UTILITY CLASSES
+
+.u-image--full {
+  display: block;
+  width: 100%;
+}
+
+.u-nav--stick {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.fullBleed {
+  @include fullBleed;
+}
+
+.space {
+  margin-bottom: 100px;
+
+  @include media(lap) {
+    margin-bottom: $gutter*2;
+  }
+
+  @include media(palm) {
+    margin-bottom: $gutter;
+  }
+}
+
+.u-center {
+  text-align: center !important;
+}
+
+.u-m--auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@include media(palm) {
+  h3 {
+    text-align: center;
+  }
+
+  .grid-1of1--palm {
+    margin-bottom: $gutter*3;
+  }
 }

@@ -1,0 +1,38 @@
+.btn {
+  padding: 15px 30px;
+  display: inline-block;
+  color: $grey-dark;
+  font-weight: 700;
+  background-color: $purple;
+  transition: all 0.3s ease-in-out;
+  border-radius: 40px;
+
+  &:hover {
+    background-color: $purple-light;
+  }
+}
+
+a.btn, a.btn:active, a.btn:visited {
+  color: white;
+  text-decoration: none;
+}
+
+a.btn:hover, a.btn:focus {
+  color: white;
+}
+
+p.btn-wrapper {
+  margin-top: $gutter;
+  
+  @include media(palm) {
+    text-align: center;
+  }
+}
+
+@include media(palm) {
+  .about p.btn-wrapper,
+  .projects p.btn-wrapper,
+  .hireMe p.btn-wrapper {
+    margin-bottom: $gutter*3;
+  }
+}

@@ -1,0 +1,51 @@
+doctype html
+html(lang='en')
+  include head.pug
+  body
+    include header.pug
+    section.space
+      .page-hero.bg-purpleGreen.space
+        .hero-text-bg
+          h2 Insights
+          hr.center
+          p
+            em All I do is feel.
+      .container.grid.grid--top
+        .grid-1of3.grid-1of1--palm
+          h3 @JustineCodes on Medium
+          hr.small
+          p I enjoy the process of reflection through writing.
+          p
+            strong Key learnings:
+          ul
+            li Writing without being long-winded
+            li Writing for people like myself (3 minute attention span)
+            li
+              | Writing 
+              em whatever I damn feel like
+          p.btn-wrapper
+            a.btn(href='http://medium.com/@JustineCodes') Read Blog
+        .grid-1of3.grid-1of1--palm
+          h3 Webinars & Talks
+          hr.small
+          p
+            | I have presented several lunch and learns and wanted to encapsulate them somehow for future reference.
+          p
+            strong Key learnings:
+          ul
+            li Getting used to the awful sound of my voice
+          p.btn-wrapper
+            a.btn(href='/resources.html') Resources
+        .grid-1of3.grid-1of1--palm
+          h3 Club FED
+          hr.small
+          p
+            | An internal weekly education initiative. Colleagues gather together to talk about anything related to front-end development.
+          p
+            strong Key learnings:
+          ul
+            li Leading, planning, facilitating
+            li Theme building and team building
+            li A dry-run environment for improving presentations/talks
+    include contact.pug
+    include scripts.pug
