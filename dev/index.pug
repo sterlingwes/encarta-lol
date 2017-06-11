@@ -8,11 +8,11 @@ html(lang='en')
           h2 Justine Chiu
           h3 Front-End Developer, speaker, educator
     #nav-anchor
-    header#main-nav.main-nav
-      .container.combo
+    header#main-nav.main-nav.index-nav
+      .container.combo.combo--middle
         .logo.combo-first
           a(href='/') JC
-        nav.combo-last
+        nav.combo-last.nav-full
           ul
             li
               a#nav-about(href='#about') About
@@ -22,6 +22,19 @@ html(lang='en')
               a#nav-hireme(href='#hireme') Hire Me
             li
               a#nav-contact(href='#contact') Contact
+        .combo-last.hamburger.show-hamburger
+          i.fa.fa-bars(aria-hidden='true')
+          i.fa.fa-close(aria-hidden='true')
+    .palm-nav
+      ul
+        li
+          a(href='about.html') About
+        li
+          a(href='portfolio-dev.html') Portfolio
+        li
+          a(href='portfolio-insights.html') Insights
+        li
+          a(href='hireme.html') Hire Me
     section#about.about.space
       .container.grid.grid--middle
         .grid-2of3.grid-1of1--lap.grid-1of1--palm
@@ -66,18 +79,18 @@ html(lang='en')
     section#hireme.hireMe.space
       .container.grid.grid--middle
         .grid-1of3.grid-1of1--palm.grid-1of1--lap
-          h2 Hire Me For...
+          h2 Hire Me
           hr
           .combo.combo--middle
             .combo-first
               span.emoji 🎤
             .combo-last
-              p Giving talks on career transitioning to web development and career planning.
+              p To give talks on career planning and transitioning for junior web developers.
           .combo.combo--middle
             .combo-first
               span.emoji 👩🏻‍🏫
             .combo-last
-              p Teaching groups beginner HTML and CSS.
+              p To teach groups beginner HTML and CSS.
           .combo.combo--middle
             .combo-first
               span.emoji 🚫

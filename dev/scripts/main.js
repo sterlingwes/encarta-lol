@@ -14,12 +14,21 @@ var heightOfNav = $('#main-nav').outerHeight();
 
 function smoothScrollThang(elementClass) {
   var scrollTop = $(elementClass).offset().top - heightOfNav;
-  console.log('!');
   return $('html, body').animate({ scrollTop: scrollTop }, 500);
+}
+
+function hamburger(){
+  $('.hamburger').on('click', function() {
+    $('.palm-nav').toggleClass('palm-nav--show');
+    $('i.fa.fa-close').toggleClass('u-display--block');
+    $('i.fa.fa-bars').toggleClass('u-display--none');
+  })
 }
 
 $(function () {
   ultimateStickyNav();
+
+  hamburger();
 
   $('#nav-about').on('click', function () {
     smoothScrollThang('#about');
