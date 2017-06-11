@@ -10,6 +10,10 @@ h1, h2, h3, h4, h5, h6, .logo, .btn {
 
 h2 {
   font-size: 3rem;
+
+  @include media(palm) {
+    font-size: 1.5rem;
+  }
 }
 
 p, h3, h2 {

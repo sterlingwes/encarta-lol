@@ -2,32 +2,12 @@
 
 // SHOW MENU SCROLLED BEYOND HERO SECTION
 
-var navHeight
-var unscrolledNavHeight
-var fixed = false
-
-function stickyNav() {
-  $(document).scroll(function () {
-    var y = $(this).scrollTop();
-    if (y > unscrolledNavHeight && !fixed) {
-      fixed = true;
-      $('#main-nav').addClass('u-nav--stick');
-      addNavPadding();
-    }
-    
-    if (y <= unscrolledNavHeight && fixed) {
-      fixed = false;
-      $('#main-nav').removeClass('u-nav--stick');
-      $('#navpad').remove();
-    }
-  });
-}
-
-function addNavPadding() {
-  var div = document.createElement('div');
-  div.style.height = navHeight + 'px';
-  div.id = 'navpad';
-  $(document.body).prepend(div);
+function ultimateStickyNav(){
+  $(window).scroll(function() {
+    var o = $(window).scrollTop(),
+      n = $("#nav-anchor").offset().top;
+    o > n ? $(".main-nav").addClass("sticko") : $(".main-nav").removeClass("sticko")
+  })
 }
 
 var heightOfNav = $('#main-nav').outerHeight();
@@ -39,10 +19,7 @@ function smoothScrollThang(elementClass) {
 }
 
 $(function () {
-  navHeight = $('#main-nav').outerHeight();
-  unscrolledNavHeight = $('.hero').outerHeight();
-
-  stickyNav();
+  ultimateStickyNav();
 
   $('#nav-about').on('click', function () {
     smoothScrollThang('#about');
