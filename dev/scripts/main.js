@@ -2,18 +2,38 @@
 
 // SHOW MENU SCROLLED BEYOND HERO SECTION
 
+var navHeight;
+var heightOfNav;
+var heroHeight;
+var fixed = false;
+var mainNav;
+
 function ultimateStickyNav(){
   $(window).scroll(function() {
-    var o = $(window).scrollTop(),
-      n = $("#nav-anchor").offset().top;
-    o > n ? $(".main-nav").addClass("sticko") : $(".main-nav").removeClass("sticko")
+    var currentPos = $(this).scrollTop();
+    if (currentPos > heroHeight && !fixed) {
+      fixed = true;
+      mainNav.addClass("sticko")
+      addNavPadding();
+    }
+
+    if (currentPos <= heroHeight && fixed) {
+      fixed = false;
+      mainNav.removeClass("sticko")
+      $('#navpad').remove();
+    }
   })
 }
 
-var heightOfNav = $('#main-nav').outerHeight();
+function addNavPadding() {
+  var div = document.createElement('div');
+  div.style.height = navHeight + 'px';
+  div.id = 'navpad';
+  $(document.body).prepend(div);
+}
 
 function smoothScrollThang(elementClass) {
-  var scrollTop = $(elementClass).offset().top - heightOfNav;
+  var scrollTop = $(elementClass).offset().top - navHeight;
   return $('html, body').animate({ scrollTop: scrollTop }, 500);
 }
 
@@ -29,6 +49,10 @@ $(function () {
   ultimateStickyNav();
 
   hamburger();
+
+  mainNav = $("#main-nav");
+  navHeight = mainNav.outerHeight();
+  heroHeight = $('.hero').outerHeight();
 
   $('#nav-about').on('click', function () {
     smoothScrollThang('#about');
